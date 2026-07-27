@@ -47,7 +47,10 @@ function App() {
   )}
 />
 
-       <Route path="/cart" render={()=> <cart books={books}={cart} />
+      <Route
+  path="/cart"
+  render={() => <Cart books={books} cart={cart} />}
+/>
 
         <Footer />
       </div>
