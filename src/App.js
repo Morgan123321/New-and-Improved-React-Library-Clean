@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Books from "./pages/Books";
 import BookInfo from "./pages/BookInfo";
 import { books } from "./data";
-import Cart from "./pages/Cart";
+
 
 
 function App() {
@@ -35,10 +35,16 @@ function App() {
           render={() => <Books books={books} />}
         />
 
-        <Route
-          path="/books/:id"
-          render={() => <BookInfo books={books} addToCart={addToCart}/>}
-        />
+       <Route
+  path="/books/:id"
+  render={() => (
+    <BookInfo
+      books={books}
+      addToCart={addToCart}
+      cart={cart}
+    />
+  )}
+/>
 
        <Route path="/cart" component={Cart} />
 
