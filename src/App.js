@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Books from "./pages/Books";
 import BookInfo from "./pages/BookInfo";
 import { books } from "./data";
+import Cart from "./pages/Cart";
 
 
 
