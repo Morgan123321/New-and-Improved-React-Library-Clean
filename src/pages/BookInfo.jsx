@@ -10,9 +10,14 @@ const BookInfo = ({ books, addToCart }) => {
   const book = books.find((book) => +book.id === +id);
   const [added,setAdded]=useState(false);
 
- function addBookToCart(book) {
-    setAdded(true);
-    addBookToCart(book)
+function addBookToCart(book) {
+  setAdded(true);
+  addToCart(book);
+}
+ }
+
+ function bookExistsOnCart () {
+    const dupe = Cart.find(book=>book.id=== +id)
  }
     return (
         <div id="books__body">
@@ -54,7 +59,7 @@ const BookInfo = ({ books, addToCart }) => {
                                 
                             </div>
                             
-                            {added ? (
+                            {bookExistsOnCart() ? (
                                 <button className="btn">Checkout</button>
                             ):(
                             <button className="btn" onClick={()=>addBookToCart(book)}>
