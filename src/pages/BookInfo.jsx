@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
 import Book from "../components/ui/Book"
+import Cart from "../pages/Cart"
 
 const BookInfo = ({ books, addToCart }) => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function addBookToCart(book) {
   setAdded(true);
   addToCart(book);
 }
- }
+ 
 
  function bookExistsOnCart () {
     const dupe = Cart.find(book=>book.id=== +id)
