@@ -47,7 +47,7 @@ function App() {
   )}
 />
 
-       <Route path="/cart" component={Cart} />
+       <Route path="/cart" render={()=> <cart books={books}={cart} />
 
         <Footer />
       </div>

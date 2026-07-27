@@ -17,9 +17,9 @@ function addBookToCart(book) {
 }
  
 
- function bookExistsOnCart () {
-    const dupe = Cart.find(book=>book.id=== +id)
- }
+ function bookExistsOnCart() {
+  return cart.some((book) => +book.id === +id);
+}
     return (
         <div id="books__body">
             <main id="books__main">
@@ -61,7 +61,9 @@ function addBookToCart(book) {
                             </div>
                             
                             {bookExistsOnCart() ? (
+                                <Link to={`/cart`} className="book__link">
                                 <button className="btn">Checkout</button>
+                         </Link>
                             ):(
                             <button className="btn" onClick={()=>addBookToCart(book)}>
                                 Add to cart
