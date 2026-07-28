@@ -18,15 +18,20 @@ const Cart = ()=> {
                                     <span className="cart__total">Total</span>
                                 </div>
                                 <div className="cart__body">
+
+                                    {Cart.map((book)=> {
+                                        return (
+                                    
+                                
                                     <div className="cart__item">
                                         <div className="cart__book">
-                                            <img src="https://m.media-amazon.com/images/I/61mIq2iJUXL._AC_UF1000,1000_QL80_.jpg" className="cart__book--img" alt=""/>
+                                            <img src={book.url} className="cart__book--img" alt=""/>
                                         <div className="cart__book--info">
                                             <span className="cart__book--title">
-                                                Cracking the Code
+                                                {book.title}
                                             </span>
                                             <span className="cart__book--price">
-                                                $10.00
+                                               ${(book.salePrice || book.originalPrice).toFixed(2)}
                                             </span>
                                             <button className="cart__book--remove">
                                                 Remove
@@ -40,10 +45,10 @@ const Cart = ()=> {
                                             $10.00
                                         </div>
                                     </div>
-
                                 </div>
-
-                             </div>
+                                
+                               
+                            </div>
                         <div className="total">
                         <div className="total__item total__sub-total">
                             <span>Subtotal</span>
