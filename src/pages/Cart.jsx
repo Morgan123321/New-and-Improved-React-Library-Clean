@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cart = () => {
+const Cart = ({cart}) => {
 
 return (
 
@@ -31,7 +31,6 @@ return (
 </div>
 
 <div className="cart__body">
-
 {cart.map((book) => {
 
 return (
