@@ -16,7 +16,21 @@ function App() {
   const [cart,setCart]=useState([]);
 
   function addToCart(book) {
-    setCart([book])
+    setCart([...cart, {...book,quantity: 1}]);
+  }
+
+  function changeQuantity(book, quantity) {
+   setCart(cart.map(item=> {
+   if (item.id===book.id) {
+    return {
+      ...item,
+      quantity:quantity,
+    }
+   }
+   else {
+    return{}
+   }
+   }))
   }
 
   useEffect(()=> {
@@ -42,7 +56,7 @@ function App() {
     <BookInfo
       books={books}
       addToCart={addToCart}
-      cart={cart}
+      cart={cart} changeQuantity={changeQuantity}
     />
   )}
 />
