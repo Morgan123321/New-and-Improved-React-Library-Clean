@@ -1,6 +1,15 @@
 import React from "react";
 
 const Cart = ({cart, changeQuantity}) => {
+   const total = () => {
+    let counter = 0;
+    cart.forEach((item)=> {
+    counter+= (book.salePrice || book.originalPrice).toFixed(2);
+    });
+   };
+    const subtotal = () => {
+
+    }
 
 return (
 
@@ -93,7 +102,7 @@ onChange={(event)=> changeQuantity(book, event.target.value)}
 
 </div>
 
-<div className="cart__total">$10.00</div>
+<div className="cart__total">${(book.salePrice || book.originalPrice * book.quantity).toFixed(2)}</div>
 
 </div>
 
