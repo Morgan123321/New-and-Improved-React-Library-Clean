@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+const Cart = ({ cart, changeQuantity }) => {
 const [total, setTotal] = useState(0);
 
 useEffect(() => {
@@ -10,7 +11,7 @@ useEffect(() => {
   });
 
   setTotal(price);
-}, [cart]);
+}, [cart,cart.quantity]);
 
   
 return ( 
@@ -42,7 +43,7 @@ return (
 </div>
 
 <div className="cart__body">
-{cart.map((book) => {
+    {cart.map((book) => {
 
 return (
 
@@ -122,7 +123,7 @@ onChange={(event)=> changeQuantity(book, event.target.value)}
 
 <span>Subtotal</span>
 
-<span>$9.00</span>
+<span>${(total()*0.9).toFixed(2)}</span>
 
 </div>
 
@@ -130,7 +131,7 @@ onChange={(event)=> changeQuantity(book, event.target.value)}
 
 <span>Tax</span>
 
-<span>$1.00</span>
+<span>${(total()*0.1).toFixed(2)}</span>
 
 </div>
 
