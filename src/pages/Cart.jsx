@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Cart = ({cart, changeQuantity,item}) => {
-   const total = () => {
+const Cart = ({ cart, changeQuantity, item }) => {
+const [total, setTotal]=useState();
+    useEffect(()=> {
     let price = 0;
-    cart.forEach((item)=> {
-    price+= (item.salePrice || item.originalPrice).toFixed(2);
+
+    cart.forEach((item) => {
+      price += (item.salePrice || item.originalPrice).toFixed(2);
     });
-   };
-return price;
+    setTotal(price)
+   
+  },[cart])
+  const total = () => {
+  return price;
 
-    };
+  };
 
-return (
+  
+
 
 <div id="books__body">
 
