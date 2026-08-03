@@ -11,7 +11,7 @@ useEffect(() => {
   });
 
   setTotal(price);
-}, [cart,cart.quantity]);
+}, [cart]);
 
   
 return ( 
@@ -123,7 +123,7 @@ onChange={(event)=> changeQuantity(book, event.target.value)}
 
 <span>Subtotal</span>
 
-<span>${(total()*0.9).toFixed(2)}</span>
+<span>${(total * 0.9).toFixed(2)}</span>
 
 </div>
 
@@ -131,7 +131,7 @@ onChange={(event)=> changeQuantity(book, event.target.value)}
 
 <span>Tax</span>
 
-<span>${(total()*0.1).toFixed(2)}</span>
+<span>${(total * 0.1).toFixed(2)}</span>
 
 </div>
 
