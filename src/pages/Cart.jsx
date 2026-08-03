@@ -1,23 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const Cart = ({ cart, changeQuantity, item }) => {
-const [total, setTotal]=useState();
-    useEffect(()=> {
-    let price = 0;
+const [total, setTotal] = useState(0);
 
-    cart.forEach((item) => {
-      price += (item.salePrice || item.originalPrice).toFixed(2);
-    });
-    setTotal(price)
-   
-  },[cart])
-  const total = () => {
-  return price;
+useEffect(() => {
+  let price = 0;
 
-  };
+  cart.forEach((item) => {
+    price += (item.salePrice || item.originalPrice) * item.quantity;
+  });
+
+  setTotal(price);
+}, [cart]);
 
   
-
+return ( 
 
 <div id="books__body">
 
@@ -142,7 +138,7 @@ onChange={(event)=> changeQuantity(book, event.target.value)}
 
 <span>Total</span>
 
-<span>${total()}</span>
+<span>${total.toFixed(2)}</span>
 
 </div>
 
