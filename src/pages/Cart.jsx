@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-
-const Cart = ({ cart, changeQuantity }) => {
+import EmptyCart from "../assets/empty_cart.svg"
+import { Link} from "react-router-dom";
+const Cart = ({ cart, changeQuantity,removeItem }) => {
 const [total, setTotal] = useState(0);
+
 
 useEffect(() => {
   let price = 0;
@@ -77,7 +79,7 @@ $
 
 </span>
 
-<button className="cart__book--remove">
+<button className="cart__book--remove" onClick={()=>removeItem(book)}>
 
 Remove
 
@@ -116,8 +118,16 @@ onChange={(event)=> changeQuantity(book, event.target.value)}
 </div>
 
 </div>
+<div className="cart__empty">
+    <img src={EmptyCart} alt="" className="cart__empty--img"/>
+    <h2>You don't have any books in your cart!</h2>
+    <Link to="/books">
+    <button className="btn">Browse Books </button>
+    </Link>
+</div>
 
-<div className="total">
+{cart.length > 0 && (
+    <div className="total">
 
 <div className="total__item total__sub-total">
 
