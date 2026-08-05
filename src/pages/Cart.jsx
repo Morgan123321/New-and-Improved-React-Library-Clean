@@ -62,7 +62,8 @@ className="cart__book--img"
 alt=""
 
 />
-
+  </div>
+)}
 <div className="cart__book--info">
 
 <span className="cart__book--title">
@@ -172,6 +173,8 @@ Proceed to Checkout
 </div>
 
 </div>
+
+
 
 </div>
 
