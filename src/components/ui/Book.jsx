@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef,useState } from "react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
@@ -15,7 +15,7 @@ const mountedRef=useRef(true);
 useEffect (()=> {
 const image = new Image();
 image.src=book.url;
-image.onLoad = ()=> {
+image.onload = ()=> {
    setTimeout(()=>{
    if (mountedRef.current) {
    setImg(image);
@@ -30,9 +30,11 @@ return() => {
 
 return (
 <div className="book">
-   {
-      img ? (
-      <>
+   {img ? (
+  // Book content
+) : (
+  <div className="book__img--skeleton"></div>
+)}
    
    <Link to={`/books/${book.id}`}>
                         <figure className="book__img--wrapper">
