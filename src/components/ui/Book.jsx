@@ -66,6 +66,8 @@ return (
         <div className="skeleton book__price--skeleton"></div>
       </>
     )}
-  </div>
+ </div>
 );
+};
+
 export default Book;
