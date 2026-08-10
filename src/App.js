@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Footer from './components/Footer';
-import Highlights from './components/Highlights';
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import "./App.css";
