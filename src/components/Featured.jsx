@@ -5,7 +5,7 @@ import { books } from '../data'
 const Featured = () => {
     console.log(books);
      console.log();
-    function getFiveStarBooks() {}
+   
        
         
     
